@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var amountOfValue = 0.0
     @State private var numberOfPeople = 0
     @State private var tipPercentage = 0
+    @State private var splashView: Bool = true
     @FocusState private var amountIsFocused: Bool
     
     let tipPercentages = [0,10,15,20,25]
@@ -20,47 +21,68 @@ struct ContentView: View {
         let tipSelection = Double(tipPercentage) // transformando em valor Double
         
         let tipValue = amountOfValue / 100 * tipSelection
-        let grandTotal = amountOfValue + tipValue
+        let grandTotal = amountOfValue + tipValue // total da conta + a porcentagem
         let amountPerPerson = grandTotal / peopleCount
         return amountPerPerson
     }
-    
     var body: some View {
         NavigationStack{
-            Form{
-                Section{
-                    TextField("Valor da Conta", value: $amountOfValue, format: .currency(code: Locale.current.currency?.identifier ?? "USD") )
-                    .keyboardType(.decimalPad) // .keyboardType(.decimalPad) Abre o numberpad teclado numérico
-                    .focused($amountIsFocused)
-                    .toolbar {
-                        if amountIsFocused {
-                            Button("Done") {
-                                amountIsFocused = false
+            ZStack{
+                LinearGradient(colors: [.black.opacity(1.8),.blue], startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea(.all)
+                 Form{
+                    Section{
+                            TextField("R$ 0,00", value: $amountOfValue, format: .currency(code: Locale.current.currency?.identifier ?? "USD") )
+                        .keyboardType(.decimalPad) // .keyboardType(.decimalPad) Abre o numberpad teclado numérico
+                        .focused($amountIsFocused)
+                        .toolbar {
+                            if amountIsFocused {
+                                Button("Done") {
+                                    amountIsFocused = false
+                                }
                             }
                         }
-                    }
-                    
-                    Picker("Quantidade de pessoas", selection: $numberOfPeople){
-                        ForEach(2..<100){
-                            Text("\($0) pessoas")
+                        Picker("Quantidade de pessoas", selection: $numberOfPeople){
+                            ForEach(2..<101){
+                                Text("\($0) pessoas")
+                            }
                         }
+                        .pickerStyle(.navigationLink)
                     }
-                    .pickerStyle(.navigationLink)
-                }
-                Section("Quanto de gorjeta você quer deixar?"){
-                    Picker("Porcentagem de gorjeta", selection: $tipPercentage){
-                        ForEach(tipPercentages, id: \.self){
-                            Text($0, format: .percent)
+                    Section("Quanto de gorjeta você quer deixar?"){
+                        Picker("Porcentagem de gorjeta", selection: $tipPercentage){
+                            ForEach(tipPercentages, id: \.self){
+                                Text($0, format: .percent)
+                            }
                         }
+                        .pickerStyle(.segmented)
+                        .colorMultiply(.cyan)
                     }
-                    .pickerStyle(.segmented)
+                    .foregroundColor(.white)
+                    Section("valor por pessoa"){
+                        Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    }
+                    .foregroundColor(.white)
+                    Section("Total da conta"){
+                        Text(amountOfValue, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    }
+                    .foregroundColor(.white)
                 }
-                Section("Total por pessoa"){
-                    Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+             .scrollContentBackground(.hidden) // Oculta o fundo do conteúdo rolável para permitir que o gradiente seja visível
+             .preferredColorScheme(.dark)
+
+            }
+            .toolbar{
+                ToolbarItem(placement: .navigationBarLeading){
+                    Image("logoWhite")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 130, height: 130)
+                        .padding()
                 }
             }
-            .navigationTitle("WeSplit")
         }
+
     }
 }
 
