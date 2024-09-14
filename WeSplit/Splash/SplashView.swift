@@ -20,8 +20,9 @@ struct SplashView: View {
                 .resizable()
                 .frame(width: 300,height: 300)
         }.ignoresSafeArea(.all)
+    
     }
-} 
+}
 
 #Preview {
     SplashView()

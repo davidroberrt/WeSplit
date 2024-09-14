@@ -11,10 +11,10 @@ struct ContentView: View {
     @State private var amountOfValue = 0.0
     @State private var numberOfPeople = 0
     @State private var tipPercentage = 0
-    @State private var splashView: Bool = true
+    @State private var showSplashView: Bool = true
     @FocusState private var amountIsFocused: Bool
     
-    let tipPercentages = [0,10,15,20,25]
+    //let tipPercentages = [0,10,15,20,25]
     
     var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 2)
@@ -26,66 +26,22 @@ struct ContentView: View {
         return amountPerPerson
     }
     var body: some View {
-        NavigationStack{
-            ZStack{
-                LinearGradient(colors: [.black.opacity(1.8),.blue], startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea(.all)
-                 Form{
-                    Section{
-                            TextField("R$ 0,00", value: $amountOfValue, format: .currency(code: Locale.current.currency?.identifier ?? "USD") )
-                        .keyboardType(.decimalPad) // .keyboardType(.decimalPad) Abre o numberpad teclado numérico
-                        .focused($amountIsFocused)
-                        .toolbar {
-                            if amountIsFocused {
-                                Button("Done") {
-                                    amountIsFocused = false
-                                }
-                            }
-                        }
-                        Picker("Quantidade de pessoas", selection: $numberOfPeople){
-                            ForEach(2..<101){
-                                Text("\($0) pessoas")
-                            }
-                        }
-                        .pickerStyle(.navigationLink)
-                    }
-                    Section("Quanto de gorjeta você quer deixar?"){
-                        Picker("Porcentagem de gorjeta", selection: $tipPercentage){
-                            ForEach(tipPercentages, id: \.self){
-                                Text($0, format: .percent)
-                            }
-                        }
-                        .pickerStyle(.segmented)
-                        .colorMultiply(.cyan)
-                    }
-                    .foregroundColor(.white)
-                    Section("valor por pessoa"){
-                        Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                    }
-                    .foregroundColor(.white)
-                    Section("Total da conta"){
-                        Text(amountOfValue, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                    }
-                    .foregroundColor(.white)
-                }
-             .scrollContentBackground(.hidden) // Oculta o fundo do conteúdo rolável para permitir que o gradiente seja visível
-             .preferredColorScheme(.dark)
-
+        Group{
+            if showSplashView{
+                SplashView()
+            } else{
+                MainView()
             }
-            .toolbar{
-                ToolbarItem(placement: .navigationBarLeading){
-                    Image("logoWhite")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 130, height: 130)
-                        .padding()
+        }
+        .onAppear{
+            Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { _ in
+                withAnimation {
+                    showSplashView = false
                 }
             }
         }
-
     }
 }
-
 #Preview {
     ContentView()
 }
