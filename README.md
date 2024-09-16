@@ -1,7 +1,10 @@
 # WeSplit
 
-**WeSplit** é um aplicativo desenvolvido em SwiftUI para facilitar a divisão de contas entre amigos e familiares. 
+**WeSplit** é um aplicativo desenvolvido em SwiftUI para facilitar a divisão de contas entre amigos e familiares.<br>
 Ele permite calcular o valor total de uma conta com gorjeta e dividir o total entre um número especificado de pessoas.
+
+![Captura de Tela 2](https://github.com/user-attachments/assets/ad8b53ea-c44d-456b-9f99-c0699a5a1f31)
+
 
 ## Funcionalidades
 
