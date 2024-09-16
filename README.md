@@ -23,7 +23,7 @@ Veja o vídeo de demonstração abaixo:
 
 ## Tecnologias Utilizadas
 
-- **Swift**: Linguagem de programação da Apple.
+- **Swift**: Linguagem de programação nativa para iOS da Apple.
 - **SwiftUI**: Framework da Apple para criar interfaces de usuário modernas e responsivas.
 - **Xcode**: Ambiente de desenvolvimento integrado para macOS.
 
