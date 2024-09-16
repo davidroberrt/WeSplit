@@ -37,3 +37,24 @@ Veja o vídeo de demonstração abaixo:
 1. Clone o repositório:
    ```bash
    git clone https://github.com/seu-usuario/WeSplitt.git
+
+2. Abra o projeto no Xcode:
+   ```bash
+   open WeSplitt.xcodeproj
+
+3. Compile e execute o projeto no Xcode.
+
+## Uso
+
+1. **Insira o valor da conta:** Utilize o campo de texto para inserir o valor total da conta.
+2. **Selecione a porcentagem de gorjeta:** Use o seletor para escolher a porcentagem de gorjeta.
+3. **Escolha o número de pessoas:** Defina quantas pessoas irão dividir a conta.
+4. **Visualize os resultados:** O aplicativo exibirá o valor total com gorjeta e o valor a ser pago por cada pessoa.
+
+## Contato
+
+**Se você tiver alguma dúvida ou sugestão, entre em contato:**
+
+- **Autor:** David Robert
+- **E-mail:** davidrobert.info@gmail.com
+- **GitHub:** davidroberrt
