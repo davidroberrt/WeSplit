@@ -65,4 +65,4 @@ Veja o vídeo de demonstração abaixo:
 [![youtube](https://img.shields.io/badge/youtube-F9F9F9?style=for-the-badge&logo=youtube&logoColor=red)](https://youtu.be/kePxRO98lEY)
 [![Github](https://img.shields.io/badge/github-2E2E2E?style=for-the-badge&logo=github&logoColor=white)](https://github.com/davidroberrt)
 
-
+![Captura de Tela 2](https://github.com/user-attachments/assets/ad8b53ea-c44d-456b-9f99-c0699a5a1f31)
