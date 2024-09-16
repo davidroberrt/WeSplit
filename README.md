@@ -63,6 +63,6 @@ Veja o vídeo de demonstração abaixo:
 [![instagram](https://img.shields.io/badge/instagram-405DE6?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/davidroberrt)
 [![gmail](https://img.shields.io/badge/gmail-red?style=for-the-badge&logo=gmail&logoColor=white)](mailto:davidrobert.info@gmail.com)
 [![youtube](https://img.shields.io/badge/youtube-F9F9F9?style=for-the-badge&logo=youtube&logoColor=red)](https://youtu.be/kePxRO98lEY)
-[![Github](https://img.shields.io/badge/github-F9F9F9?style=for-the-badge&logo=github&logoColor=red)](https://github.com/davidroberrt)
+[![Github](https://img.shields.io/badge/github-white?style=for-the-badge&logo=github&logoColor=black)](https://github.com/davidroberrt)
 
 
