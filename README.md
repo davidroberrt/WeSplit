@@ -19,7 +19,7 @@ Ele permite calcular o valor total de uma conta com gorjeta e dividir o total en
 
 Veja o vídeo de demonstração abaixo:
 
-[![Vídeo de Demonstração](https://img.youtube.com/vi/ID_DO_VIDEO/hqdefault.jpg)](https://drive.google.com/file/d/1Xrd1Wuvj-A2Aujr9xc6fG1hI-L4ZTxBY/view?usp=share_link)
+[![youtube](https://img.shields.io/badge/youtube-F9F9F9?style=for-the-badge&logo=youtube&logoColor=red)](https://drive.google.com/file/d/1Xrd1Wuvj-A2Aujr9xc6fG1hI-L4ZTxBY/view?usp=share_link)
 
 ## Tecnologias Utilizadas
 
